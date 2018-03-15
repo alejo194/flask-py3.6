@@ -1,0 +1,6 @@
+version: '2'
+services:
+  test:
+    image: cxhjet/flask-py3.6:1.1
+    container_name: test
+    command: ["nginx", "-g", "daemon off;"]
