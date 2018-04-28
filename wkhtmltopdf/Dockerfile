@@ -11,7 +11,7 @@ RUN apk add --no-cache \
     apk add qt5-qtbase-dev \
             wkhtmltopdf \
             --no-cache \
-            --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
+            --repository http://dl-4.alpinelinux.org/alpine/edge/testing/ \
             --allow-untrusted \
     && \
 
