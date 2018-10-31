@@ -16,7 +16,7 @@ MarkupSafe
 mysqlclient
 pathlib
 PyJWT
-pymssql
+pymssql==2.1.3
 python-consul
 PyYAML
 redis
