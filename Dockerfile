@@ -17,6 +17,7 @@ RUN   echo http://dl-cdn.alpinelinux.org/alpine/v3.3/main > /etc/apk/repositorie
         openssl-dev \
         pcre-dev \
         zlib-dev \
+      && pip install Cython \
       && pip install -r /var/requirement.txt \
       && find /usr/local -depth \
                 \( \
