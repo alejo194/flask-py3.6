@@ -1,0 +1,21 @@
+参考：
+https://blog.csdn.net/ezreal_tao/article/details/82558906
+
+```bash
+uwsgi 
+        uwsgi_send_timeout 600;        # 指定向uWSGI传送请求的超时时间，完成握手后向uWSGI传送请求的超时时间。
+        uwsgi_connect_timeout 600;   # 指定连接到后端uWSGI的超时时间。(默认60s,官网说最好不要超过75s)
+        uwsgi_read_timeout 600;        # 指定接收uWSGI应答的超时时间，完成握手后接收uWSGI应答的超时时间。
+        
+nginx反向代理的参数
+        # 注意这儿，一般这三个配套修改
+        proxy_send_timeout 600;
+        proxy_connect_timeout 600;
+        proxy_read_timeout 600;
+
+fastcgi
+        # 注意这儿，一般这三个配套修改
+        fastcgi_send_timeout 600;
+        fastcgi_connect_timeout 600;
+        fastcgi_read_timeout 600;
+```
