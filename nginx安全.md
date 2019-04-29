@@ -3,3 +3,6 @@
 
 + make -j4 其中-j4代表使用cpu核数
 + 端口查看： netstat -tnlp | grep "80"
+
+#### nginx 配置文件中server_tokens也可以去掉版本号
+server_tokens off;
