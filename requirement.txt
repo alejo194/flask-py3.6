@@ -23,7 +23,8 @@ redis
 requests
 setuptools
 six
-SQLAlchemy==1.1.13
+#SQLAlchemy==1.1.13 由于低版本出现安全问题所有注释掉
+SQLAlchemy
 swagger-spec-validator
 typing
 urllib3
