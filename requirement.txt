@@ -2,12 +2,14 @@ certifi
 chardet
 click
 clickclick
-connexion
-Flask
+connexion==2.14.2
+connexion[swagger-ui]
+Flask==2.2.5
+Werkzeug==2.2.3
 Flask-Cors
 flask-jsontools
 Flask-Redis
-Flask-SQLAlchemy
+Flask-SQLAlchemy==3.0.5
 flask_babel
 flask_excel
 idna
@@ -25,7 +27,7 @@ redis
 requests
 setuptools
 six
-SQLAlchemy
+SQLAlchemy==2.0.33
 swagger-spec-validator
 typing
 urllib3
