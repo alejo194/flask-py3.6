@@ -9,7 +9,7 @@ Werkzeug==2.2.3
 Flask-Cors
 flask-jsontools
 Flask-Redis
-Flask-SQLAlchemy==3.0.5
+Flask-SQLAlchemy==3.1.1
 flask_babel
 flask_excel
 idna
@@ -20,7 +20,7 @@ MarkupSafe
 mysqlclient
 pathlib
 PyJWT
-pymssql==2.2.8
+pymssql==2.3.0
 python-consul
 PyYAML
 redis

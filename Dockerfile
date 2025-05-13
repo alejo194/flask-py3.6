@@ -1,4 +1,4 @@
-From python:3.13-alpine3.21
+From python:3.11-alpine3.21
 COPY ./requirement.txt /var/requirement.txt
 RUN  apk add --no-cache --virtual .build-deps  \
         freetds-dev \
@@ -16,7 +16,6 @@ RUN  apk add --no-cache --virtual .build-deps  \
         pcre-dev \
         zlib-dev \
       && pip install Cython \
-      && pip install pymssql==2.2.8  \
       && pip install --upgrade pip \
       && pip install -r /var/requirement.txt \
       && find /usr/local -depth \
@@ -119,16 +118,16 @@ RUN set -x \
     && apk add --no-cache tzdata \
 # forward request and error logs to docker log collector
     && ln -sf /dev/stdout /var/log/nginx/access.log \
-    && ln -sf /dev/stderr /var/log/nginx/error.log \
-# create a docker-entrypoint.d directory
-    && mkdir /docker-entrypoint.d
-
-COPY nginx-alpine-slim/docker-entrypoint.sh /
-COPY nginx-alpine-slim/10-listen-on-ipv6-by-default.sh /docker-entrypoint.d
-COPY nginx-alpine-slim/15-local-resolvers.envsh /docker-entrypoint.d
-COPY nginx-alpine-slim/20-envsubst-on-templates.sh /docker-entrypoint.d
-COPY nginx-alpine-slim/30-tune-worker-processes.sh /docker-entrypoint.d
-ENTRYPOINT ["/docker-entrypoint.sh"]
+    && ln -sf /dev/stderr /var/log/nginx/error.log 
+## create a docker-entrypoint.d directory
+#    && mkdir /docker-entrypoint.d
+#
+#COPY nginx-alpine-slim/docker-entrypoint.sh /
+#COPY nginx-alpine-slim/10-listen-on-ipv6-by-default.sh /docker-entrypoint.d
+#COPY nginx-alpine-slim/15-local-resolvers.envsh /docker-entrypoint.d
+#COPY nginx-alpine-slim/20-envsubst-on-templates.sh /docker-entrypoint.d
+#COPY nginx-alpine-slim/30-tune-worker-processes.sh /docker-entrypoint.d
+#ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 80
 
