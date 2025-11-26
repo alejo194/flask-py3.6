@@ -23,7 +23,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc \
         mssql-tools18
 ENV PATH="$PATH:/opt/mssql-tools18/bin"
 # Copy requirements
-COPY ./requirement.txt /var/requirement.txt
+COPY ./requirements.txt /var/requirements.txt
 # Install Python dependencies
 RUN pip install --upgrade pip Cython && \
     pip install -r /var/requirement.txt
