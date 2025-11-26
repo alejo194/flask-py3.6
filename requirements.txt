@@ -18,7 +18,6 @@ inflection
 itsdangerous
 jsonschema
 MarkupSafe
-#mysqlclient
 pathlib
 PyJWT
 pymssql
