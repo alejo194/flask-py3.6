@@ -10,6 +10,12 @@ RUN apt-get update && \
         unixodbc \
         unixodbc-dev \
         lsb-release \
+        ##mysqlclient 依赖
+        gcc \
+        python3-dev \
+        pkg-config \
+        default-libmysqlclient-dev \
+        ##mysqlclient 依赖##
         ca-certificates
 # --- Install Microsoft ODBC Driver 18 + tools ---
 RUN curl https://packages.microsoft.com/keys/microsoft.asc \
