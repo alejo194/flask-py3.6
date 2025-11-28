@@ -34,3 +34,11 @@ COPY ./requirements.txt /var/requirements.txt
 RUN pip install --upgrade pip Cython && \
     pip install -r /var/requirement.txt
 CMD ["python"]
+FROM python:3.12-slim-bookworm
+# 复制 Python 包
+COPY --from=build /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+# 复制可执行文件（关键）
+COPY --from=build /usr/local/bin /usr/local/bin
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        gcc g++ make python3-dev
